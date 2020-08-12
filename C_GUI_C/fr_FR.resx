@@ -1,0 +1,318 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="1" xml:space="preserve">
+    <value>Ouvrir</value>
+  </data>
+  <data name="12" xml:space="preserve">
+    <value>Calculatrice Balistique</value>
+  </data>
+  <data name="13" xml:space="preserve">
+    <value>Type de Balles</value>
+  </data>
+  <data name="14" xml:space="preserve">
+    <value>Type de Cartouches</value>
+  </data>
+  <data name="2" xml:space="preserve">
+    <value>Options</value>
+  </data>
+  <data name="21" xml:space="preserve">
+    <value>Langues</value>
+  </data>
+  <data name="22" xml:space="preserve">
+    <value>Mode Visuel</value>
+  </data>
+  <data name="abb" xml:space="preserve">
+    <value>Abréviations</value>
+  </data>
+  <data name="ap" xml:space="preserve">
+    <value>Balles Perforantes</value>
+  </data>
+  <data name="bc1" xml:space="preserve">
+    <value>Coefficient Balistique</value>
+  </data>
+  <data name="bc2" xml:space="preserve">
+    <value>Poids</value>
+  </data>
+  <data name="bc3" xml:space="preserve">
+    <value>Coefficient de Forme</value>
+  </data>
+  <data name="bc4" xml:space="preserve">
+    <value>Diamètre</value>
+  </data>
+  <data name="bcval" xml:space="preserve">
+    <value>Valeur CD:</value>
+  </data>
+  <data name="bc_corr" xml:space="preserve">
+    <value>Valeur de Correction:</value>
+  </data>
+  <data name="belted" xml:space="preserve">
+    <value>Ceinture</value>
+  </data>
+  <data name="button" xml:space="preserve">
+    <value>Calculer</value>
+  </data>
+  <data name="camp0" xml:space="preserve">
+    <value>Un ou plusieurs champs sont «0»</value>
+  </data>
+  <data name="cdf1" xml:space="preserve">
+    <value>Densité</value>
+  </data>
+  <data name="cdf2" xml:space="preserve">
+    <value>Shape Coef. Value:</value>
+  </data>
+  <data name="centf" xml:space="preserve">
+    <value>Percussion Centrale</value>
+  </data>
+  <data name="clearB" xml:space="preserve">
+    <value>Nettoyer</value>
+  </data>
+  <data name="coax" xml:space="preserve">
+    <value>Coeff. de Traînée</value>
+  </data>
+  <data name="Conv" xml:space="preserve">
+    <value>Convertisseur</value>
+  </data>
+  <data name="cx1" xml:space="preserve">
+    <value>Distance</value>
+  </data>
+  <data name="cxval" xml:space="preserve">
+    <value>Valeur du Coeff. de traînée:</value>
+  </data>
+  <data name="Ex" xml:space="preserve">
+    <value>Explosif</value>
+  </data>
+  <data name="faval" xml:space="preserve">
+    <value>Valeur du Facteur Ambiant:</value>
+  </data>
+  <data name="fill" xml:space="preserve">
+    <value>Remplissez toutes les valeurs</value>
+  </data>
+  <data name="form" xml:space="preserve">
+    <value>Formes</value>
+  </data>
+  <data name="Fra" xml:space="preserve">
+    <value>Frangible</value>
+  </data>
+  <data name="HP" xml:space="preserve">
+    <value>Tête Creuse</value>
+  </data>
+  <data name="htu" xml:space="preserve">
+    <value>Comment utiliser</value>
+  </data>
+  <data name="id1" xml:space="preserve">
+    <value>Ø Projectile:</value>
+  </data>
+  <data name="id10" xml:space="preserve">
+    <value>Amorce:</value>
+  </data>
+  <data name="id2" xml:space="preserve">
+    <value>Ø Collet:</value>
+  </data>
+  <data name="id3" xml:space="preserve">
+    <value>Ø Còne d'appui:</value>
+  </data>
+  <data name="id4" xml:space="preserve">
+    <value>Ø Culot:</value>
+  </data>
+  <data name="id5" xml:space="preserve">
+    <value>Ø Jante:</value>
+  </data>
+  <data name="id6" xml:space="preserve">
+    <value>Épaisseur de jante:</value>
+  </data>
+  <data name="id7" xml:space="preserve">
+    <value>Longueur de Douille:</value>
+  </data>
+  <data name="id8" xml:space="preserve">
+    <value>Longueur de la Cartouche:</value>
+  </data>
+  <data name="id9" xml:space="preserve">
+    <value>Étui Capacitance:</value>
+  </data>
+  <data name="id_10" xml:space="preserve">
+    <value>Amorce Large Pistol</value>
+  </data>
+  <data name="id_11" xml:space="preserve">
+    <value>Amorce Small Rifle</value>
+  </data>
+  <data name="id_12" xml:space="preserve">
+    <value>Amorce Large Rifle</value>
+  </data>
+  <data name="id_13" xml:space="preserve">
+    <value>Percussion Annulaire</value>
+  </data>
+  <data name="id_14" xml:space="preserve">
+    <value>Amorce 8mm</value>
+  </data>
+  <data name="id_15" xml:space="preserve">
+    <value>Amorce Shotshell</value>
+  </data>
+  <data name="id_9" xml:space="preserve">
+    <value>Amorce Small Pistol</value>
+  </data>
+  <data name="In" xml:space="preserve">
+    <value>Incendiaire</value>
+  </data>
+  <data name="in-mm" xml:space="preserve">
+    <value>Define if use the imperial or metric measures</value>
+  </data>
+  <data name="Jacketed" xml:space="preserve">
+    <value>Balle Chemisée</value>
+  </data>
+  <data name="novalue" xml:space="preserve">
+    <value>Remplissez toutes les cases</value>
+  </data>
+  <data name="oth" xml:space="preserve">
+    <value>Autres</value>
+  </data>
+  <data name="P" xml:space="preserve">
+    <value>Pistolets</value>
+  </data>
+  <data name="R" xml:space="preserve">
+    <value>Carabines</value>
+  </data>
+  <data name="rebrim" xml:space="preserve">
+    <value>Jante à Rabais</value>
+  </data>
+  <data name="rimless" xml:space="preserve">
+    <value>Sans monture</value>
+  </data>
+  <data name="rimmed" xml:space="preserve">
+    <value>Rimmed</value>
+  </data>
+  <data name="S" xml:space="preserve">
+    <value>Fusils de chasse</value>
+  </data>
+  <data name="semir" xml:space="preserve">
+    <value>Semi-Cerclée</value>
+  </data>
+  <data name="sez" xml:space="preserve">
+    <value>Section (mm2)</value>
+  </data>
+  <data name="timg" xml:space="preserve">
+    <value>Certaines mesures sont indicatives et pas exactement les mêmes que les mesures réelles.</value>
+  </data>
+  <data name="tool1" xml:space="preserve">
+    <value>tool1 Sélectionnez "g" pour les mesures décimales (g / mm2) ou "gr" pour les mesures impériales (lbs / in2)</value>
+  </data>
+  <data name="Tra" xml:space="preserve">
+    <value>Traceur</value>
+  </data>
+</root>
