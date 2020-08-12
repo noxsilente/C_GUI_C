@@ -1317,6 +1317,7 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
+    <Content Include=".gitignore.txt" />
     <Content Include="bin\Debug\C_GUI_C.exe" />
     <Content Include="bin\Debug\C_GUI_C.pdb" />
     <Content Include="bin\Debug\en\C_GUI_C.resources.dll" />
