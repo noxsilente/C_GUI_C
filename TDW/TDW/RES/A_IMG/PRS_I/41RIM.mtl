@@ -1,9 +1,0 @@
-# FreeCAD v0.18 build16131 (Git) Arch module
-# http://www.freecadweb.org
-newmtl color_66490e
-Kd 0.4000000059604645 0.2862745225429535 0.054901961237192154
-d 0
-newmtl color_8c8c8c
-Kd 0.5490196347236633 0.5490196347236633 0.5490196347236633
-d 0
-# Material Count: 2
