@@ -82,6 +82,7 @@
             this.DARK_MODE = new System.Windows.Forms.ToolStripMenuItem();
             this.infobox = new System.Windows.Forms.ToolStripMenuItem();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.okb = new System.Windows.Forms.Button();
             this.label11 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.Tbin = new System.Windows.Forms.TextBox();
@@ -464,6 +465,7 @@
             // groupBox1
             // 
             this.groupBox1.BackColor = System.Drawing.Color.Transparent;
+            this.groupBox1.Controls.Add(this.okb);
             this.groupBox1.Controls.Add(this.label11);
             this.groupBox1.Controls.Add(this.label10);
             this.groupBox1.Controls.Add(this.Tbin);
@@ -472,6 +474,13 @@
             resources.ApplyResources(this.groupBox1, "groupBox1");
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.TabStop = false;
+            // 
+            // okb
+            // 
+            resources.ApplyResources(this.okb, "okb");
+            this.okb.Name = "okb";
+            this.okb.UseVisualStyleBackColor = true;
+            this.okb.Click += new System.EventHandler(this.conv_click);
             // 
             // label11
             // 
@@ -488,14 +497,14 @@
             resources.ApplyResources(this.Tbin, "Tbin");
             this.Tbin.Name = "Tbin";
             this.Tbin.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Ins);
-            this.Tbin.Leave += new System.EventHandler(this.Conv_in);
+            this.Tbin.MouseDown += new System.Windows.Forms.MouseEventHandler(this.cl);
             // 
             // Tbmm
             // 
             resources.ApplyResources(this.Tbmm, "Tbmm");
             this.Tbmm.Name = "Tbmm";
             this.Tbmm.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Ins);
-            this.Tbmm.Leave += new System.EventHandler(this.Conv_mm);
+            this.Tbmm.MouseDown += new System.Windows.Forms.MouseEventHandler(this.cl);
             // 
             // toolTip2
             // 
@@ -662,6 +671,7 @@
         private System.Windows.Forms.RadioButton RC;
         private System.Windows.Forms.RadioButton SC;
         private System.Windows.Forms.RadioButton PC;
+        private System.Windows.Forms.Button okb;
     }
 }
 

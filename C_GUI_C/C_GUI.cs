@@ -554,7 +554,7 @@ namespace C_GUI_C
         private void Ins(object sender, KeyPressEventArgs e)
         {
             if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar)
-            && (e.KeyChar != '.') && (e.KeyChar != '-')) e.Handled = true;
+            && (e.KeyChar != ',') && (e.KeyChar != '-')) e.Handled = true;
         }
 
         private void toolimg(object sender, EventArgs e)
@@ -562,10 +562,35 @@ namespace C_GUI_C
             if (img != null) toolTip2.SetToolTip(pictureBox1, toolmsgimg);
         }
 
-        private void Conv_in(object sender, EventArgs e)
+
+        private void cl(object sender, MouseEventArgs e)
         {
-            if (Tbin.Text == ".") Tbin.Text = "";
-            if ((Tbin.Text != "") && (Tbin.Text != "."))
+            if (Tbin.Text == "") Tbmm.Text = "";
+            else if (Tbmm.Text == "") Tbin.Text = "";
+        }
+
+
+        /*  private void Conv_in(object sender, EventArgs e)
+          {
+              if (Tbin.Text == ".") Tbin.Text = "";
+              if ((Tbin.Text != "") && (Tbin.Text != "."))
+              {
+                  inch = double.Parse(Tbin.Text);
+                  mm = inch * 25.4;
+                  Tbmm.Text = mm.ToString("0.000");
+              }
+          }*/
+
+        private void conv_click(object sender, EventArgs e)
+        {
+           
+            if (Tbin.Text == "")
+            {
+                mm = double.Parse(Tbmm.Text);
+                inch = mm / 25.4;
+                Tbin.Text = inch.ToString("0.000");
+            }
+            else if (Tbmm.Text == "")
             {
                 inch = double.Parse(Tbin.Text);
                 mm = inch * 25.4;
@@ -578,7 +603,7 @@ namespace C_GUI_C
             if (Conv.Checked == true) groupBox1.Visible = true;
             if (Conv.Checked == false) groupBox1.Visible = false;
         }
-        private void Conv_mm(object sender, EventArgs e)
+       /* private void Conv_mm(object sender, EventArgs e)
         {
             if (Tbmm.Text == ".") Tbmm.Text = "";
             if ((Tbmm.Text != "") && (Tbmm.Text != "."))
@@ -587,7 +612,7 @@ namespace C_GUI_C
                 inch = mm / 25.4;
                 Tbin.Text = inch.ToString("0.000");
             }
-        }
+        }*/
         private void DarkModeEnable()
         {
             BackColor = Color.FromArgb(30, 30, 30);
@@ -631,6 +656,8 @@ namespace C_GUI_C
             RB.BackColor = Color.FromArgb(0, 0, 10);
             BCB.BackColor = Color.FromArgb(0, 0, 10);
             button5.BackColor = Color.FromArgb(0, 0, 10);
+            okb.BackColor = Color.FromArgb(0, 0, 10);
+            okb.ForeColor = Color.White;
             richTextBox1.BackColor = Color.FromArgb(30, 30, 30);
             richTextBox1.ForeColor = Color.White;
             pictureBox1.BackColor = Color.Gainsboro;
@@ -709,6 +736,8 @@ namespace C_GUI_C
             RB.BackColor = Color.White;
             BCB.BackColor = Color.White;
             button5.BackColor = Color.White;
+            okb.BackColor = Color.White;
+            okb.ForeColor = Color.Black;
             Tbin.BackColor = Color.White;
             Tbmm.BackColor = Color.White;
             richTextBox1.BackColor = Color.White;

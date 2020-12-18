@@ -12,22 +12,24 @@
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
-    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <IsWebBootstrapper>true</IsWebBootstrapper>
     <PublishUrl>C:\Users\PC8.1\Desktop\C_GUI_PROJECT\</PublishUrl>
     <Install>true</Install>
-    <InstallFrom>Disk</InstallFrom>
-    <UpdateEnabled>true</UpdateEnabled>
+    <InstallFrom>Web</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
     <UpdateMode>Background</UpdateMode>
     <UpdateInterval>7</UpdateInterval>
     <UpdateIntervalUnits>Days</UpdateIntervalUnits>
     <UpdatePeriodically>false</UpdatePeriodically>
     <UpdateRequired>true</UpdateRequired>
     <MapFileExtensions>true</MapFileExtensions>
-    <UpdateUrl>https://drive.google.com/drive/u/1/folders/1dNoRSFKS48K3LBjtHUJIvbK1alUziPo4/</UpdateUrl>
+    <InstallUrl>https://drive.google.com/drive/folders/1C4ZjhkCAojMSwPlWaVIUogzk7oTB24kJ%3fusp=sharing/</InstallUrl>
+    <UpdateUrl>https://drive.google.com/drive/folders/1C4ZjhkCAojMSwPlWaVIUogzk7oTB24kJ%3fusp=sharing/</UpdateUrl>
     <ProductName>software</ProductName>
     <PublisherName>C GUI Project</PublisherName>
     <MinimumRequiredVersion>1.0.0.0</MinimumRequiredVersion>
-    <ApplicationRevision>2</ApplicationRevision>
+    <OpenBrowserOnPublish>false</OpenBrowserOnPublish>
+    <ApplicationRevision>7</ApplicationRevision>
     <ApplicationVersion>1.0.2.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <PublishWizardCompleted>true</PublishWizardCompleted>

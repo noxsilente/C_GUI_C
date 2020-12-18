@@ -1,5 +1,15 @@
 <parent>
 <!-- Ammo Rifles inches -->
+<CRS_I obj=".17 ACKLEY BEE" ref="res\par\CRS_I\17AB.xml" ref2="res\ext_par\CRS_I\17AB.xml" sh="RES/A_IMG/CRS_I/17AB/17AB" >
+</CRS_I>
+<CRS_I obj=".17 CCM" ref="res\par\CRS_I\17CCM.xml" ref2="res\ext_par\CRS_I\17CCM.xml" sh="RES/A_IMG/CRS_I/17CCM/17CCM" >
+</CRS_I>
+<CRS_I obj=".17 PMC/AGUILA" ref="res\par\CRS_I\17PMC.xml" ref2="res\ext_par\CRS_I\17PMC.xml" sh="RES/A_IMG/CRS_I/17PMC/17PMC" >
+</CRS_I>
+<CRS_I obj=".17 REM. FIREBALL" ref="res\par\CRS_I\17RF.xml" ref2="res\ext_par\CRS_I\17RF.xml" sh="RES/A_IMG/CRS_I/17RF/17RF" >
+</CRS_I>
+<CRS_I obj=".17 HMR" ref="res\par\CRS_I\17HMR.xml" ref2="res\ext_par\CRS_I\17HMR.xml" sh="RES/A_IMG/CRS_I/17HMR/17HMR" >
+</CRS_I>
 <CRS_I obj=".17 HORNADY MachII" ref="res\par\CRS_I\17HM2.xml" ref2="res\ext_par\CRS_I\17HM2.xml" sh="RES/A_IMG/CRS_I/17HM2" >
 </CRS_I>
 <CRS_I obj=".17 HORNET" ref="res\par\CRS_I\17H.xml" ref2="res\ext_par\CRS_I\17H.xml" sh="RES/A_IMG/CRS_I/17H" >
@@ -10,6 +20,8 @@
 </CRS_I>
 <CRS_I obj=".17 WIN. MAG." ref="res\par\CRS_I\17WINMAG.xml" ref2="res\ext_par\CRS_I\17WINMAG.xml" sh="RES/A_IMG/CRS_I/17WINMAG" >
 </CRS_I>
+<CRS_I obj=".17-223" ref="res\par\CRS_I\17-223.xml" ref2="res\ext_par\CRS_I\17-223.xml" sh="RES/A_IMG/CRS_I/17-223/17-223" >
+</CRS_I>
 <CRS_I obj=".19 CALHOON" ref="res\par\CRS_I\19.xml" ref2="res\ext_par\CRS_I\19.xml" sh="RES/A_IMG/CRS_I/19CALHOON" >
 </CRS_I>
 <CRS_I obj=".204 RUGER" ref="res\par\CRS_I\204R.xml" ref2="res\ext_par\CRS_I\204R.xml" sh="RES/A_IMG/CRS_I/204RUGER" >
@@ -17,6 +29,12 @@
 <CRS_I obj=".218 BEE" ref="res\par\CRS_I\218B.xml" ref2="res\ext_par\CRS_I\218B.xml" sh="RES/A_IMG/CRS_I/218B" >
 </CRS_I>
 <CRS_I obj=".219 ZIPPER" ref="res\par\CRS_I\219Z.xml" ref2="res\ext_par\CRS_I\219Z.xml" sh="RES/A_IMG/CRS_I/219Z" >
+</CRS_I>
+<CRS_I obj=".20 BR" ref="res\par\CRS_I\20BR.xml" ref2="res\ext_par\CRS_I\20BR.xml" sh="RES/A_IMG/CRS_I/20BR/20BR" >
+</CRS_I>
+<CRS_I obj=".20 TACTICAL" ref="res\par\CRS_I\20TAC.xml" ref2="res\ext_par\CRS_I\20TAC.xml" sh="RES/A_IMG/CRS_I/2TAC/20TAC" >
+</CRS_I>
+<CRS_I obj=".20 VARTARG" ref="res\par\CRS_I\20Var.xml" ref2="res\ext_par\CRS_I\20Var.xml" sh="RES/A_IMG/CRS_I/20Var/20Var" >
 </CRS_I>
 <CRS_I obj=".22 EXTRA LONG" ref="res\par\CRS_I\22L+.xml" ref2="res\ext_par\CRS_I\22L+.xml" sh="RES/A_IMG/CRS_I/22L+" >
 </CRS_I>
@@ -45,6 +63,18 @@
 <CRS_I obj=".22/.303" ref="res\par\CRS_I\303-22.xml" ref2="res\ext_par\CRS_I\303-22.xml" sh="RES/A_IMG/CRS_I/303-22" >
 </CRS_I>
 <CRS_I obj=".22 EARGESPLITTEN LOUDENBOOMER" ref="res\par\CRS_I\22EL.xml" ref2="res\ext_par\CRS_I\22EL.xml" sh="0" >
+</CRS_I>
+<CRS_I obj=".25 REMINGTON" ref="res\par\CRS_I\25REM.xml" ref2="res\ext_par\CRS_I\25REM.xml" sh="0" ><!--><-->
+</CRS_I>
+<CRS_I obj=".25 STEVENS /SHORT" ref="res\par\CRS_I\25S-SL.xml" ref2="res\ext_par\CRS_I\25S-SL.xml" sh="0" > <!--><-->
+</CRS_I>
+<CRS_I obj=".25 WSSM" ref="res\par\CRS_I\25WSSM.xml" ref2="res\ext_par\CRS_I\25WSSM.xml" sh="0" > <!--><-->
+</CRS_I>
+<CRS_I obj=".25-21 STEVENS" ref="res\par\CRS_I\25-21ST.xml" ref2="res\ext_par\CRS_I\25-21ST.xml" sh="0" > <!--><-->
+</CRS_I>
+<CRS_I obj=".25-25 STEVENS" ref="res\par\CRS_I\25-25ST.xml" ref2="res\ext_par\CRS_I\25-25ST.xml" sh="0" ><!--><-->
+</CRS_I>
+<CRS_I obj=".25-45 SHARPS" ref="res\par\CRS_I\25-45.xml" ref2="res\ext_par\CRS_I\25-45.xml" sh="0" ><!--><-->
 </CRS_I>
 <CRS_I obj=".220 SWIFT" ref="res\par\CRS_I\220S.xml" ref2="res\ext_par\CRS_I\220S.xml" sh="RES/A_IMG/CRS_I/220Swift" >
 </CRS_I>
@@ -268,6 +298,10 @@
 <PRS_I N="2" obj=".22 BB/CB" ref="res\par\PRS_I\22BB-CB.xml" ref2="res\ext_par\PRS_I\22BB-CB.xml" sh="RES/A_IMG/PRS_I/22BB-CB" >
 </PRS_I>
 <PRS_I N="2" obj=".22 LR" ref="res\par\PRS_I\22LR.xml" ref2="res\ext_par\PRS_I\22LR.xml" sh="RES/A_IMG/PRS_I/22LR" >
+</PRS_I>
+<PRS_I  obj=".22 TCM" ref="res\par\PRS_I\22TCM.xml" ref2="res\ext_par\PRS_I\22TCM.xml" sh="0" >
+</PRS_I>
+<PRS_I  obj=".25 NAA" ref="res\par\PRS_I\25NAA.xml" ref2="res\ext_par\PRS_I\25NAA.xml" sh="0" >
 </PRS_I>
 <PRS_I obj=".25 ACP" ref="res\par\PRS_I\25ACP.xml" ref2="res\ext_par\PRS_I\25ACP.xml" sh="RES/A_IMG/PRS_I/25ACP" >
 </PRS_I>
