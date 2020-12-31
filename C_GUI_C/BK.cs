@@ -1,12 +1,5 @@
 ﻿using System;
-using System.CodeDom;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Xml;
 
@@ -31,7 +24,7 @@ namespace C_GUI_C
         }
         private void cng_pic(object sender, EventArgs e)
         {
-            if (ximg == 0)pictureBox1.BackgroundImage = Image.FromFile(@"RES/imgs/b2.png");
+            if (ximg == 0) pictureBox1.BackgroundImage = Image.FromFile(@"RES/imgs/b2.png");
             if (ximg == 1) pictureBox1.BackgroundImage = Image.FromFile(@"RES/imgs/b3.png");
             if (ximg == 2)
             {

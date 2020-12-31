@@ -1,13 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Security.Cryptography;
-using System.Security.Cryptography.X509Certificates;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace C_GUI_C
@@ -177,7 +169,9 @@ namespace C_GUI_C
             }
             textBox12.Enabled = false;
         }
+#pragma warning disable CS0169 // Il campo 'BC.Cal' non viene mai usato
         double G, D, FC, S1, FA, H, T, Cal, L;
+#pragma warning restore CS0169 // Il campo 'BC.Cal' non viene mai usato
         double v = 331.6;
 
 
@@ -216,8 +210,8 @@ namespace C_GUI_C
                     double N;
                     //Siacci(v);
                     //FC = ((Cx * (v * v) * FA)) / (2 * fv);
-                    N = (4*L+1) / 4;
-                    FC = (2 / N) * (Math.Sqrt((4 * N - 1)*N));
+                    N = (4 * L + 1) / 4;
+                    FC = (2 / N) * (Math.Sqrt((4 * N - 1) * N));
                     label18.Text = FC.ToString("0.000");
                     textBox2.Text = FC.ToString("0.000");
                 }
@@ -265,7 +259,7 @@ namespace C_GUI_C
         private void insert_T(object sender, KeyPressEventArgs e)
         {
             if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar)
-                && (e.KeyChar != '.') && (e.KeyChar!='-')) e.Handled = true;
+                && (e.KeyChar != '.') && (e.KeyChar != '-')) e.Handled = true;
         }
         private void insert(object sender, KeyPressEventArgs e)
         {
@@ -285,14 +279,14 @@ namespace C_GUI_C
         {
             if (textBox3.Text != "") D = double.Parse(textBox3.Text);
         }
-   /*     private double Siacci(double v)
-        {
-            if (T != 0) v = 331.6 + (0.6 * T);
-            double temp_v1 = 0.2002 * v;
-            double temp_v2 = (0.1648 * v) - 47.95;
-            double temp_v3 = 0.0442 * v;
-            fv = (temp_v1 - 48.05) + (Math.Sqrt((temp_v2 * temp_v2) + 9.6)) + ((temp_v3 * (v - 300))) / (371 + Math.Pow((v / 200), 10));
-            return (fv);
-        }*/
+        /*     private double Siacci(double v)
+             {
+                 if (T != 0) v = 331.6 + (0.6 * T);
+                 double temp_v1 = 0.2002 * v;
+                 double temp_v2 = (0.1648 * v) - 47.95;
+                 double temp_v3 = 0.0442 * v;
+                 fv = (temp_v1 - 48.05) + (Math.Sqrt((temp_v2 * temp_v2) + 9.6)) + ((temp_v3 * (v - 300))) / (371 + Math.Pow((v / 200), 10));
+                 return (fv);
+             }*/
     }
 }

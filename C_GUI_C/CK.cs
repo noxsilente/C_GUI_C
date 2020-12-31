@@ -1,11 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Drawing;
 using System.Windows.Forms;
 using System.Xml;
 
@@ -13,9 +6,9 @@ namespace C_GUI_C
 {
     public partial class CK : Form
     {
-        string lang, mode, T1, T2, T3, T4, T5, T6,T7, T8, name;
+        string lang, mode, T1, T2, T3, T4, T5, T6, T7, T8, name;
         public CK()
-        {       
+        {
             InitializeComponent();
             lang = C_GUI.lang;
             mode = C_GUI.mode;

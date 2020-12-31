@@ -1,23 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Configuration;
-using System.Data;
+﻿using C_GUI_C.Properties;
+using System;
 using System.Drawing;
-using System.Globalization;
 using System.IO;
-using System.Linq;
-using System.Reflection;
-using System.Reflection.Emit;
-using System.Resources;
-using System.Runtime.Remoting.Messaging;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Xml;
 using System.Xml.Linq;
-using System.Xml.Schema;
-using C_GUI_C.Properties;
 
 namespace C_GUI_C
 {
@@ -26,7 +13,7 @@ namespace C_GUI_C
 
         //-------- Var declaration
         bool In, Mm;
-        string ListSel,  toolmsg1, toolmsgimg;
+        string ListSel, toolmsg1, toolmsgimg;
         string[] par_val = new string[16];
         int[] par_val_t = new int[16];
         double inch, mm;
@@ -115,7 +102,7 @@ namespace C_GUI_C
                 List.Items.Add(l1e.Attribute("obj").Value);
                 listBox1.Items.Add(l1e.Attribute("ref").Value).ToString();
                 listBox2.Items.Add(l1e.Attribute("ref2").Value).ToString();
-                listBox3.Items.Add(l1e.Attribute("sh").Value).ToString();              
+                listBox3.Items.Add(l1e.Attribute("sh").Value).ToString();
 
             }
         }
@@ -137,10 +124,10 @@ namespace C_GUI_C
         }
         private void BCButtonClicked(object sender, EventArgs e)
         {
-           if (PC.Checked == true) ListSel = "P";
-           if (RC.Checked == true) ListSel = "R";
-           if (SC.Checked == true) ListSel = "S";
-           if (NEC.Checked == true) ListSel = "NE";
+            if (PC.Checked == true) ListSel = "P";
+            if (RC.Checked == true) ListSel = "R";
+            if (SC.Checked == true) ListSel = "S";
+            if (NEC.Checked == true) ListSel = "NE";
             List.Items.Clear();
             listBox1.Items.Clear();
             listBox2.Items.Clear();
@@ -352,17 +339,17 @@ namespace C_GUI_C
                 else
                     using (StreamWriter sw = File.CreateText(file))
                     {
-                        
+
                         sw.WriteLine(obj);
                     }
                 img = (@listBox3.SelectedItem.ToString() + ".jpg");
                 pictureBox1.Image = Image.FromFile(img);
                 subject = (List.SelectedItem.ToString());
-              //  button5.Visible = true;
+                //  button5.Visible = true;
             }
             else
             {
-                MessageBox.Show("NO IMAGE!", "NO IMAGE!", MessageBoxButtons.OK,MessageBoxIcon.Warning);
+                MessageBox.Show("NO IMAGE!", "NO IMAGE!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 pictureBox1.Image = null;
                 button5.Hide();
             }
@@ -398,10 +385,10 @@ namespace C_GUI_C
         }
         private void Tdw(object sender, EventArgs e)
         {
-           /* TDW.MAIN form = new TDW.MAIN();
-            form.Show();
-            */
-            
+            /* TDW.MAIN form = new TDW.MAIN();
+             form.Show();
+             */
+
         }
 
         private void imgzoom(object sender, EventArgs e)
@@ -583,7 +570,7 @@ namespace C_GUI_C
 
         private void conv_click(object sender, EventArgs e)
         {
-           
+
             if (Tbin.Text == "")
             {
                 mm = double.Parse(Tbmm.Text);
@@ -603,16 +590,16 @@ namespace C_GUI_C
             if (Conv.Checked == true) groupBox1.Visible = true;
             if (Conv.Checked == false) groupBox1.Visible = false;
         }
-       /* private void Conv_mm(object sender, EventArgs e)
-        {
-            if (Tbmm.Text == ".") Tbmm.Text = "";
-            if ((Tbmm.Text != "") && (Tbmm.Text != "."))
-            {
-                mm = double.Parse(Tbmm.Text);
-                inch = mm / 25.4;
-                Tbin.Text = inch.ToString("0.000");
-            }
-        }*/
+        /* private void Conv_mm(object sender, EventArgs e)
+         {
+             if (Tbmm.Text == ".") Tbmm.Text = "";
+             if ((Tbmm.Text != "") && (Tbmm.Text != "."))
+             {
+                 mm = double.Parse(Tbmm.Text);
+                 inch = mm / 25.4;
+                 Tbin.Text = inch.ToString("0.000");
+             }
+         }*/
         private void DarkModeEnable()
         {
             BackColor = Color.FromArgb(30, 30, 30);

@@ -53,15 +53,18 @@ namespace C_GUI_C
             {
                 case "de_DE":
                     txt = de_DE.htu;
+                    pdf = @"RES\Docs\c_gui-manual_DE.pdf";
                     break;
                 case "en_EN":
                     txt = en_EN.htu;
                     break;
                 case "es_ES":
                     txt = es_ES.htu;
+                    pdf = @"RES\Docs\c_gui-manual_ES.pdf";
                     break;
                 case "fr_FR":
                     txt = fr_FR.htu;
+                    pdf = @"RES\Docs\c_gui-manual_FR.pdf";
                     break;
                 case "it_IT":
                     txt = it_IT.htu;

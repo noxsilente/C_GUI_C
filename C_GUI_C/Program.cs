@@ -1,7 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace C_GUI_C
@@ -9,7 +6,7 @@ namespace C_GUI_C
 
     static class Program
     {
-        
+
         /// <summary>
         /// Punto di ingresso principale dell'applicazione.
         /// </summary>
