@@ -13,6 +13,7 @@ namespace C_GUI_C
 
         //-------- Var declaration
         bool In, Mm;
+        bool chk = false;
         string ListSel, toolmsg1, toolmsgimg;
         string[] par_val = new string[16];
         int[] par_val_t = new int[16];
@@ -23,10 +24,14 @@ namespace C_GUI_C
         public static string img;
         public static string obj;
         public static string subject;
+        public static string temp_1;
+        public static string temp_2;
         public C_GUI()
         {
             mode = Settings.Default.Mode.ToString();
             lang = Settings.Default.Lang.ToString();
+            temp_1 = Settings.Default.temp_1.ToString();
+            temp_2 = Settings.Default.temp_2.ToString();
             InitializeComponent();
             if (mode == "dark") DarkModeEnable();
             if (mode == "light") LightModeEnable();
@@ -50,16 +55,22 @@ namespace C_GUI_C
             }
             button5.Hide();
         }
+        //Standard colour
         private void STD_SEL(object sender, EventArgs e)
         {
             Settings.Default.Mode = "light";
             LightModeEnable();
         }
+        //Dark colour
         private void DARK_SEL(object sender, EventArgs e)
         {
             Settings.Default.Mode = "dark";
             DarkModeEnable();
         }
+        /*
+        Language selection:
+        needed for save language settings and go to code part 
+         */
         private void DE_sel(object sender, EventArgs e)
         {
             Settings.Default.Lang = "de_DE";
@@ -85,10 +96,36 @@ namespace C_GUI_C
             Settings.Default.Lang = "it_IT";
             ITsel();
         }
+        //Save settings before exit 
         private void SaveSetts(object sender, FormClosedEventArgs e)
         {
             Settings.Default.Save();
         }
+        // check if is selected inches or millimeters parameters
+        private void chkif(object sender, EventArgs e)
+        {
+            if (In == false && Mm == false)
+            {
+                toolTip1.SetToolTip(PB, toolmsg1);
+                toolTip1.SetToolTip(RB, toolmsg1);
+            }
+        }
+        private void inse_(object sender, EventArgs e)
+        {
+            if (INC.Checked == true)
+            {
+                In = true;
+                Mm = false;
+            }
+            if (MMC.Checked == true)
+            {
+                In = false;
+                Mm = true;
+            }
+        }
+        /*
+           Define the right kind of ammunitions to see
+         */
         private void PButtonClicked(object sender, EventArgs e)
         {
             if (In == true) ListSel = "PRS_I";
@@ -140,6 +177,11 @@ namespace C_GUI_C
                 listBox3.Items.Add(l1e.Attribute("sh").Value).ToString();
             }
         }
+        /* 
+         Next step: visualize all objects of specific munition list.
+        the route of all objects is in hidden list box.    
+        and then it put all parameters of a selected ammunition in the right place
+         */
         private void lstsel(object sender, EventArgs e)
         {
             // reset all texts
@@ -201,19 +243,6 @@ namespace C_GUI_C
                 }
             }
             InsertParam(par_val_t, par_val);
-        }
-        private void inse_(object sender, EventArgs e)
-        {
-            if (INC.Checked == true)
-            {
-                In = true;
-                Mm = false;
-            }
-            if (MMC.Checked == true)
-            {
-                In = false;
-                Mm = true;
-            }
         }
         private void InsertParam(int[] i, string[] s)
         {
@@ -353,15 +382,9 @@ namespace C_GUI_C
                 pictureBox1.Image = null;
                 button5.Hide();
             }
+            if (Check_.Checked == true) Check_.Checked = false;
         }
-        private void chkif(object sender, EventArgs e)
-        {
-            if (In == false && Mm == false)
-            {
-                toolTip1.SetToolTip(PB, toolmsg1);
-                toolTip1.SetToolTip(RB, toolmsg1);
-            }
-        }
+        // actions for start other istances
         private void BalCalStart(object sender, EventArgs e)
         {
             mode = Settings.Default.Mode.ToString();
@@ -390,7 +413,6 @@ namespace C_GUI_C
              */
 
         }
-
         private void imgzoom(object sender, EventArgs e)
         {
             if (img != null)
@@ -408,7 +430,7 @@ namespace C_GUI_C
             INFO form = new INFO();
             form.Show();
         }
-
+        //translations
         private void ENsel()
         {
             Settings.Default.Lang = "en_EN";
@@ -417,6 +439,7 @@ namespace C_GUI_C
             BK_BAR.Text = en_EN._13;
             CK_BAR.Text = en_EN._14;
             Conv.Text = en_EN.Conv;
+            comp.Text = en_EN.comp;
             OptionMenuBar.Text = en_EN._2;
             Lang_bar.Text = en_EN._21;
             VM_BAR.Text = en_EN._22;
@@ -442,6 +465,7 @@ namespace C_GUI_C
             BK_BAR.Text = de_DE._13;
             CK_BAR.Text = de_DE._14;
             Conv.Text = de_DE.Conv;
+            comp.Text = de_DE.comp;
             OptionMenuBar.Text = de_DE._2;
             Lang_bar.Text = de_DE._21;
             VM_BAR.Text = de_DE._22;
@@ -468,6 +492,7 @@ namespace C_GUI_C
             BK_BAR.Text = es_ES._13;
             CK_BAR.Text = es_ES._14;
             Conv.Text = es_ES.Conv;
+            comp.Text = es_ES.comp;
             OptionMenuBar.Text = es_ES._2;
             Lang_bar.Text = es_ES._21;
             VM_BAR.Text = es_ES._22;
@@ -494,6 +519,7 @@ namespace C_GUI_C
             BK_BAR.Text = fr_FR._13;
             CK_BAR.Text = fr_FR._14;
             Conv.Text = fr_FR.Conv;
+            comp.Text = fr_FR.comp;
             OptionMenuBar.Text = fr_FR._2;
             Lang_bar.Text = fr_FR._21;
             VM_BAR.Text = fr_FR._22;
@@ -520,6 +546,7 @@ namespace C_GUI_C
             BK_BAR.Text = it_IT._13;
             CK_BAR.Text = it_IT._14;
             Conv.Text = it_IT.Conv;
+            comp.Text = it_IT.comp;
             OptionMenuBar.Text = it_IT._2;
             Lang_bar.Text = it_IT._21;
             VM_BAR.Text = it_IT._22;
@@ -538,6 +565,7 @@ namespace C_GUI_C
             toolmsg1 = it_IT.in_mm;
             toolmsgimg = it_IT.timg;
         }
+        //keyboard control and other tools 
         private void Ins(object sender, KeyPressEventArgs e)
         {
             if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar)
@@ -549,13 +577,54 @@ namespace C_GUI_C
             if (img != null) toolTip2.SetToolTip(pictureBox1, toolmsgimg);
         }
 
-
         private void cl(object sender, MouseEventArgs e)
         {
             if (Tbin.Text == "") Tbmm.Text = "";
             else if (Tbmm.Text == "") Tbin.Text = "";
         }
+        //starting point for comparator window with all setting saved (temp_1 and temp_2 are used for the two ammo to compare)
+        private void comp_start(object sender, EventArgs e)
+        {
+            
+            mode = Settings.Default.Mode.ToString();
+            lang = Settings.Default.Lang.ToString();
+            temp_1 = Settings.Default.temp_1.ToString();
+            temp_2 = Settings.Default.temp_2.ToString();
+            Comp form = new Comp();
+            form.Show();
+        }
 
+        private void Comp_Check(object sender, EventArgs e)
+        {
+            if (chk == false && listBox1.SelectedItem.ToString() != " ")
+            {
+                temp_1 = listBox1.SelectedItem.ToString();
+                Settings.Default.temp_1 = temp_1;
+                chk_state.Visible = true;
+                chk_state.Checked = true;
+                chk_state.Text = "1";
+                chk = true;
+                return;
+        }
+            if (chk== true && listBox1.SelectedItem.ToString() != " ")
+            {
+                temp_2 = listBox1.SelectedItem.ToString();
+                Settings.Default.temp_2 = temp_2;
+                chk_state.Text = "2";
+                chk = false;
+                return;
+            }
+        }
+        private void chk_state_code(object sender, EventArgs e)
+        {
+            if (chk_state.Checked == false) {
+                temp_1 = "";
+                Settings.Default.temp_1 = temp_1;
+                temp_2 = "";
+                Settings.Default.temp_2 = temp_2;
+                chk_state.Text = "-";
+            }
+        }
 
         /*  private void Conv_in(object sender, EventArgs e)
           {
@@ -567,7 +636,6 @@ namespace C_GUI_C
                   Tbmm.Text = mm.ToString("0.000");
               }
           }*/
-
         private void conv_click(object sender, EventArgs e)
         {
 
@@ -584,7 +652,6 @@ namespace C_GUI_C
                 Tbmm.Text = mm.ToString("0.000");
             }
         }
-
         private void Enable_conv(object sender, EventArgs e)
         {
             if (Conv.Checked == true) groupBox1.Visible = true;
@@ -619,6 +686,7 @@ namespace C_GUI_C
             BK_BAR.BackColor = Color.FromArgb(10, 10, 10);
             CK_BAR.BackColor = Color.FromArgb(10, 10, 10);
             Conv.BackColor = Color.FromArgb(10, 10, 10);
+            comp.BackColor = Color.FromArgb(10, 10, 10);
             infobox.BackColor = Color.FromArgb(10, 10, 10);
             MenuBar.ForeColor = Color.DarkKhaki;
             OptionMenuBar.ForeColor = Color.DarkOliveGreen;
@@ -636,6 +704,7 @@ namespace C_GUI_C
             BK_BAR.ForeColor = Color.DarkKhaki;
             CK_BAR.ForeColor = Color.DarkKhaki;
             Conv.ForeColor = Color.DarkKhaki;
+            comp.ForeColor = Color.DarkKhaki;
             infobox.ForeColor = Color.White;
             List.BackColor = Color.FromArgb(0, 0, 10);
             List.ForeColor = Color.Silver;
@@ -698,7 +767,8 @@ namespace C_GUI_C
             BC_BAR.BackColor = Color.White;
             BK_BAR.BackColor = Color.White;
             CK_BAR.BackColor = Color.White;
-            Conv.BackColor = Color.White;
+            Conv.BackColor = Color.White; 
+            comp.BackColor = Color.White;
             infobox.BackColor = Color.White;
             MenuBar.ForeColor = Color.Black;
             OptionMenuBar.ForeColor = Color.Black;
@@ -716,6 +786,7 @@ namespace C_GUI_C
             BK_BAR.ForeColor = Color.Black;
             CK_BAR.ForeColor = Color.Black;
             Conv.ForeColor = Color.Black;
+            comp.ForeColor = Color.Black;
             infobox.ForeColor = Color.Black;
             List.BackColor = Color.White;
             List.ForeColor = Color.Black;

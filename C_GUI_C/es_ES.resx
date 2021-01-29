@@ -186,6 +186,9 @@
   <data name="coax" xml:space="preserve">
     <value>Coef. de Arrastre:</value>
   </data>
+  <data name="comp" xml:space="preserve">
+    <value>Comparador</value>
+  </data>
   <data name="Conv" xml:space="preserve">
     <value>Convertidor</value>
   </data>

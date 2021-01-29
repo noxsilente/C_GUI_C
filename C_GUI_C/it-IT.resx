@@ -186,6 +186,9 @@
   <data name="coax" xml:space="preserve">
     <value>Coeff. Aerodinamico</value>
   </data>
+  <data name="comp" xml:space="preserve">
+    <value>Comparatore</value>
+  </data>
   <data name="Conv" xml:space="preserve">
     <value>Convertitore </value>
   </data>

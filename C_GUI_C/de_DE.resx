@@ -186,6 +186,9 @@
   <data name="coax" xml:space="preserve">
     <value>Luftwiderstandsbeiwert</value>
   </data>
+  <data name="comp" xml:space="preserve">
+    <value>Komparator</value>
+  </data>
   <data name="Conv" xml:space="preserve">
     <value>Konverter</value>
   </data>

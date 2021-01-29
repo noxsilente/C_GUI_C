@@ -69,5 +69,29 @@ namespace C_GUI_C.Properties {
                 this["obj"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string temp_1 {
+            get {
+                return ((string)(this["temp_1"]));
+            }
+            set {
+                this["temp_1"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string temp_2 {
+            get {
+                return ((string)(this["temp_2"]));
+            }
+            set {
+                this["temp_2"] = value;
+            }
+        }
     }
 }

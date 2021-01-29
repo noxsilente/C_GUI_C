@@ -186,6 +186,9 @@
   <data name="coax" xml:space="preserve">
     <value>Coeff. de Traînée</value>
   </data>
+  <data name="comp" xml:space="preserve">
+    <value>Comparateur</value>
+  </data>
   <data name="Conv" xml:space="preserve">
     <value>Convertisseur</value>
   </data>

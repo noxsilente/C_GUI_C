@@ -186,6 +186,9 @@
   <data name="coax" xml:space="preserve">
     <value>Drag Coeff.</value>
   </data>
+  <data name="comp" xml:space="preserve">
+    <value>Comparator</value>
+  </data>
   <data name="Conv" xml:space="preserve">
     <value>Converter</value>
   </data>

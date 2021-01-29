@@ -268,6 +268,15 @@ namespace C_GUI_C {
         }
         
         /// <summary>
+        ///   Cerca una stringa localizzata simile a Comparador.
+        /// </summary>
+        internal static string comp {
+            get {
+                return ResourceManager.GetString("comp", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Cerca una stringa localizzata simile a Convertidor.
         /// </summary>
         internal static string Conv {

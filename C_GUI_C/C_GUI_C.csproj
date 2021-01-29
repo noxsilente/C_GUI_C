@@ -129,6 +129,12 @@
     <Compile Include="CK.Designer.cs">
       <DependentUpon>CK.cs</DependentUpon>
     </Compile>
+    <Compile Include="Comp.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Comp.Designer.cs">
+      <DependentUpon>Comp.cs</DependentUpon>
+    </Compile>
     <Compile Include="C_GUI.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -157,6 +163,9 @@
       <SubType>Form</SubType>
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Compile>
+    <EmbeddedResource Include="Comp.resx">
+      <DependentUpon>Comp.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="IMGZ.Designer.cs">
       <DependentUpon>IMGZ.cs</DependentUpon>
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
@@ -633,24 +642,6 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </EmbeddedResource>
     <EmbeddedResource Include="RES\A_IMG\PRS_I\480R.jpg">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </EmbeddedResource>
-    <EmbeddedResource Include="RES\A_IMG\PRS_I\7French.jpg">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </EmbeddedResource>
-    <EmbeddedResource Include="RES\A_IMG\PRS_I\7Mauser.jpg">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </EmbeddedResource>
-    <EmbeddedResource Include="RES\A_IMG\PRS_I\7SAUM.jpg">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </EmbeddedResource>
-    <EmbeddedResource Include="RES\A_IMG\PRS_I\8x58.jpg">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </EmbeddedResource>
-    <EmbeddedResource Include="RES\A_IMG\PRS_I\8x63.jpg">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </EmbeddedResource>
-    <EmbeddedResource Include="RES\A_IMG\PRS_I\9x39.jpg">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </EmbeddedResource>
     <EmbeddedResource Include="RES\A_IMG\PRS_M\10Auto.jpg">

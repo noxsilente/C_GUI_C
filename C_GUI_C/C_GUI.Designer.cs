@@ -36,6 +36,7 @@
             this.button4 = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
             this.GParam = new System.Windows.Forms.GroupBox();
+            this.Check_ = new System.Windows.Forms.CheckBox();
             this._11 = new System.Windows.Forms.Label();
             this.bullet = new System.Windows.Forms.Label();
             this._8 = new System.Windows.Forms.Label();
@@ -70,6 +71,7 @@
             this.BK_BAR = new System.Windows.Forms.ToolStripMenuItem();
             this.CK_BAR = new System.Windows.Forms.ToolStripMenuItem();
             this.Conv = new System.Windows.Forms.ToolStripMenuItem();
+            this.comp = new System.Windows.Forms.ToolStripMenuItem();
             this.OptionMenuBar = new System.Windows.Forms.ToolStripMenuItem();
             this.Lang_bar = new System.Windows.Forms.ToolStripMenuItem();
             this.DE_L = new System.Windows.Forms.ToolStripMenuItem();
@@ -95,6 +97,7 @@
             this.RC = new System.Windows.Forms.RadioButton();
             this.SC = new System.Windows.Forms.RadioButton();
             this.PC = new System.Windows.Forms.RadioButton();
+            this.chk_state = new System.Windows.Forms.CheckBox();
             this.GParam.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -158,6 +161,7 @@
             // 
             resources.ApplyResources(this.GParam, "GParam");
             this.GParam.BackColor = System.Drawing.Color.Transparent;
+            this.GParam.Controls.Add(this.Check_);
             this.GParam.Controls.Add(this._11);
             this.GParam.Controls.Add(this.bullet);
             this.GParam.Controls.Add(this._8);
@@ -180,6 +184,13 @@
             this.GParam.Controls.Add(this.label1);
             this.GParam.Name = "GParam";
             this.GParam.TabStop = false;
+            // 
+            // Check_
+            // 
+            resources.ApplyResources(this.Check_, "Check_");
+            this.Check_.Name = "Check_";
+            this.Check_.UseVisualStyleBackColor = true;
+            this.Check_.Click += new System.EventHandler(this.Comp_Check);
             // 
             // _11
             // 
@@ -358,7 +369,8 @@
             this.BC_BAR,
             this.BK_BAR,
             this.CK_BAR,
-            this.Conv});
+            this.Conv,
+            this.comp});
             this.OpenMenuBar.Name = "OpenMenuBar";
             resources.ApplyResources(this.OpenMenuBar, "OpenMenuBar");
             // 
@@ -386,6 +398,12 @@
             this.Conv.Name = "Conv";
             resources.ApplyResources(this.Conv, "Conv");
             this.Conv.CheckedChanged += new System.EventHandler(this.Enable_conv);
+            // 
+            // comp
+            // 
+            this.comp.Name = "comp";
+            resources.ApplyResources(this.comp, "comp");
+            this.comp.Click += new System.EventHandler(this.comp_start);
             // 
             // OptionMenuBar
             // 
@@ -567,11 +585,19 @@
             this.PC.TabStop = true;
             this.PC.UseVisualStyleBackColor = true;
             // 
+            // chk_state
+            // 
+            resources.ApplyResources(this.chk_state, "chk_state");
+            this.chk_state.Name = "chk_state";
+            this.chk_state.UseVisualStyleBackColor = true;
+            this.chk_state.Click += new System.EventHandler(this.chk_state_code);
+            // 
             // C_GUI
             // 
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Window;
+            this.Controls.Add(this.chk_state);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.MMC);
             this.Controls.Add(this.INC);
@@ -672,6 +698,9 @@
         private System.Windows.Forms.RadioButton SC;
         private System.Windows.Forms.RadioButton PC;
         private System.Windows.Forms.Button okb;
+        private System.Windows.Forms.ToolStripMenuItem comp;
+        private System.Windows.Forms.CheckBox Check_;
+        private System.Windows.Forms.CheckBox chk_state;
     }
 }
 
