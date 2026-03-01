@@ -2,6 +2,7 @@
 using System;
 using System.Drawing;
 using System.IO;
+//using System.Windows.Controls;
 using System.Windows.Forms;
 using System.Xml;
 using System.Xml.Linq;
@@ -33,6 +34,12 @@ namespace C_GUI_C
             temp_1 = Settings.Default.temp_1.ToString();
             temp_2 = Settings.Default.temp_2.ToString();
             InitializeComponent();
+
+            // Rendere responsive richTextBox1 e pictureBox1 al ridimensionamento della finestra
+            richTextBox1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            pictureBox1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
+
             if (mode == "dark") DarkModeEnable();
             if (mode == "light") LightModeEnable();
             switch (lang)
@@ -41,7 +48,7 @@ namespace C_GUI_C
                     DEsel();
                     break;
                 case "en_EN":
-                    ENsel();
+                    ENsel(); 
                     break;
                 case "es_ES":
                     ESsel();
@@ -126,6 +133,14 @@ namespace C_GUI_C
         /*
            Define the right kind of ammunitions to see
          */
+        private void window_maximize(object sender, EventArgs e)
+        {
+            if (this.WindowState == FormWindowState.Maximized)
+            {
+                panel1.Width = this.ClientSize.Width - 40; // Adjust the width based on window size
+            }
+
+        }
         private void PButtonClicked(object sender, EventArgs e)
         {
             if (In == true) ListSel = "PRS_I";
@@ -204,14 +219,67 @@ namespace C_GUI_C
             listBox1.SelectedIndex = List.SelectedIndex;
             listBox2.SelectedIndex = List.SelectedIndex;
             listBox3.SelectedIndex = List.SelectedIndex;
+
+            // load first xml in a robust way, with error handling for invalid XML and file access issues, and only proceed if the file is loaded successfully
             XmlDocument xdc = new XmlDocument();
-            xdc.Load(listBox1.SelectedItem.ToString());
-            // get all numeric "id" values from xml selected file
-            foreach (XElement l1e in XElement.Load(@listBox1.SelectedItem.ToString()).Elements("b"))
+            bool xml1Loaded = false;
+            string xmlPath1 = listBox1.SelectedItem?.ToString();
+
+            if (!string.IsNullOrWhiteSpace(xmlPath1))
             {
-                j = int.Parse(l1e.Attribute("id").Value);
-                par_val_t[j] = j;
+                try
+                {
+                    xdc.Load(xmlPath1);
+                    xml1Loaded = true;
+                }
+                catch (System.Xml.XmlException xe)
+                {
+                    MessageBox.Show("File XML ERROR o:\n" + xmlPath1 + "\n" + xe.Message, "Error XML", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    // keep default values and exit
+                    InsertParam(par_val_t, par_val);
+                    return;
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("XML ERROR:\n" + xmlPath1 + "\n" + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    InsertParam(par_val_t, par_val);
+                    return;
+                }
             }
+            else
+            {
+                // no selected file: default value and exit
+                InsertParam(par_val_t, par_val);
+                return;
+            }
+
+            // get all numeric "id" values from xml selected file (usando XElement ma protetto)
+            try
+            {
+                foreach (XElement l1e in XElement.Load(xmlPath1).Elements("b"))
+                {
+                    // difensiva: assicurarsi che l'attributo esista e sia un intero valido
+                    var attr = l1e.Attribute("id");
+                    if (attr == null) continue;
+                    int parsed;
+                    if (!int.TryParse(attr.Value, out parsed)) continue;
+                    if (parsed >= 0 && parsed < par_val_t.Length)
+                        par_val_t[parsed] = parsed;
+                }
+            }
+            catch (System.Xml.XmlException xe)
+            {
+                MessageBox.Show("Parsing error:\n" + xmlPath1 + "\n" + xe.Message, "Error - XML", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                InsertParam(par_val_t, par_val);
+                return;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("XML Parsin error:\n" + xmlPath1 + "\n" + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                InsertParam(par_val_t, par_val);
+                return;
+            }
+
             // others temporary variables
             int x = 0;
             string[] s_t = new string[16];
@@ -224,22 +292,35 @@ namespace C_GUI_C
              * (so if x is equal to the id, par_val get the right string)
              * I made this for reduce the errors in the value positions
              */
-            foreach (XmlNode node in xdc.DocumentElement)
-                foreach (XmlNode child in node.ChildNodes)
+            if (xml1Loaded && xdc.DocumentElement != null)
+            {
+                foreach (XmlNode node in xdc.DocumentElement)
                 {
-                    s_t[x] = child.OuterXml;
-                    x++;
+                    foreach (XmlNode child in node.ChildNodes)
+                    {
+                        // protezione contro overflow di array
+                        if (x >= s_t.Length) break;
+                        s_t[x] = child.OuterXml;
+                        x++;
+                    }
+                    if (x >= s_t.Length) break;
                 }
+            }
+
             int xt = 0;
             int x_ = 0;
             for (x = 0; x < 15; x++)
             {
+                if (x >= par_val_t.Length) break;
                 if (x == par_val_t[x])
                 {
                     xt = par_val_t[x];
-                    s = s_t[x_];
-                    par_val[xt] = s;
-                    x_++;
+                    if (x_ < s_t.Length)
+                    {
+                        s = s_t[x_];
+                        par_val[xt] = s;
+                        x_++;
+                    }
                 }
             }
             InsertParam(par_val_t, par_val);
@@ -330,7 +411,14 @@ namespace C_GUI_C
              * ..... and others 
              */
             XmlDocument xdc2 = new XmlDocument();
-            xdc2.Load(listBox2.SelectedItem.ToString());
+            try
+            {
+                xdc2.Load(listBox2.SelectedItem.ToString());
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString(), "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
             //Image img = Image.FromFile(listBox3.SelectedItem.ToString() + ".png");
             //Control for INFOBOX with languages.. if there is no info ("N/A" in xml file) it will use english info
             // if there is no images/3d objects the section "sh" of xml file, the value will be "0", so the app will not crash if 
@@ -372,8 +460,17 @@ namespace C_GUI_C
                         sw.WriteLine(obj);
                     }
                 img = (@listBox3.SelectedItem.ToString() + ".jpg");
-                pictureBox1.Image = Image.FromFile(img);
-                subject = (List.SelectedItem.ToString());
+                if (File.Exists(img))
+                {
+                    pictureBox1.Image = System.Drawing.Image.FromFile(img);
+                    subject = (List.SelectedItem.ToString());
+                }
+                else
+                {
+                    MessageBox.Show("NO IMAGE!", "NO IMAGE!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    pictureBox1.Image = null;
+                    button5.Hide();
+                }
                 //  button5.Visible = true;
             }
             else
@@ -627,15 +724,15 @@ namespace C_GUI_C
         }
 
         /*  private void Conv_in(object sender, EventArgs e)
-          {
-              if (Tbin.Text == ".") Tbin.Text = "";
-              if ((Tbin.Text != "") && (Tbin.Text != "."))
-              {
-                  inch = double.Parse(Tbin.Text);
-                  mm = inch * 25.4;
-                  Tbmm.Text = mm.ToString("0.000");
-              }
-          }*/
+       {
+           if (Tbin.Text == ".") Tbin.Text = "";
+           if ((Tbin.Text != "") && (Tbin.Text != "."))
+           {
+               inch = double.Parse(Tbin.Text);
+               mm = inch * 25.4;
+               Tbmm.Text = mm.ToString("0.000");
+           }
+       }*/
         private void conv_click(object sender, EventArgs e)
         {
 

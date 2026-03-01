@@ -47,6 +47,8 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <DocumentationFile>
+    </DocumentationFile>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -70,10 +72,13 @@
     <GenerateManifests>true</GenerateManifests>
   </PropertyGroup>
   <PropertyGroup>
-    <SignManifests>true</SignManifests>
+    <SignManifests>false</SignManifests>
   </PropertyGroup>
   <PropertyGroup>
     <NoWin32Manifest>true</NoWin32Manifest>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>false</SignAssembly>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Microsoft.DirectX, Version=1.0.2902.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35">
@@ -140,9 +145,11 @@
     </Compile>
     <Compile Include="C_GUI.cs">
       <SubType>Form</SubType>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Compile>
     <Compile Include="C_GUI.Designer.cs">
       <DependentUpon>C_GUI.cs</DependentUpon>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Compile>
     <Compile Include="de_DE.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -166,6 +173,30 @@
       <SubType>Form</SubType>
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Compile>
+    <Content Include="RES\par\CRS_M\6x45mm.xml" />
+    <Content Include="RES\par\PRS_I\297-230.xml" />
+    <Content Include="RES\par\PRS_I\320REV.xml" />
+    <Content Include="RES\par\PRS_I\45AUTORIM.xml" />
+    <Content Include="RES\par\PRS_I\45BLACKPOW.xml" />
+    <Content Include="RES\par\PRS_I\45MARSL.xml" />
+    <Content Include="RES\par\PRS_I\45REMT.xml" />
+    <Content Include="RES\par\PRS_I\45SUPER.xml" />
+    <Content Include="RES\par\PRS_I\45WINMAG.xml" />
+    <Content Include="RES\par\PRS_I\46RIM.xml" />
+    <Content Include="RES\par\PRS_I\476ENF.xml" />
+    <Content Include="RES\par\PRS_M\10,4S.xml" />
+    <Content Include="RES\par\PRS_M\10,6x25.xml" />
+    <Content Include="RES\par\PRS_M\9BL.xml" />
+    <Content Include="RES\par\PRS_M\9G.xml" />
+    <Content Include="RES\par\PRS_M\9J.xml" />
+    <Content Include="RES\par\PRS_M\9M.xml" />
+    <Content Include="RES\par\PRS_M\9PAK.xml" />
+    <Content Include="RES\par\PRS_M\9WINMAG.xml" />
+    <Content Include="RES\par\PRS_M\9x21G.xml" />
+    <Content Include="RES\par\PRS_M\9x23S.xml" />
+    <Content Include="RES\par\PRS_M\9x25D.xml" />
+    <Content Include="RES\par\PRS_M\9x25M.xml" />
+    <Content Include="RES\par\PRS_M\9x25SAG.xml" />
     <EmbeddedResource Include="Comp.resx">
       <DependentUpon>Comp.cs</DependentUpon>
     </EmbeddedResource>
@@ -210,9 +241,11 @@
     </EmbeddedResource>
     <EmbeddedResource Include="C_GUI.en.resx">
       <DependentUpon>C_GUI.cs</DependentUpon>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </EmbeddedResource>
     <EmbeddedResource Include="C_GUI.resx">
       <DependentUpon>C_GUI.cs</DependentUpon>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </EmbeddedResource>
     <Content Include="bin\Release\C_GUI_C.exe" />
     <Content Include="bin\Release\C_GUI_C.pdb" />
