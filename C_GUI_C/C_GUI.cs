@@ -1,4 +1,5 @@
 ﻿using C_GUI_C.Properties;
+using Microsoft.DirectX.Direct3D;
 using System;
 using System.Drawing;
 using System.IO;
@@ -48,7 +49,7 @@ namespace C_GUI_C
                     DEsel();
                     break;
                 case "en_EN":
-                    ENsel(); 
+                    ENsel();
                     break;
                 case "es_ES":
                     ESsel();
@@ -60,8 +61,32 @@ namespace C_GUI_C
                     ITsel();
                     break;
             }
-            button5.Hide();
         }
+        /// <summary>
+        /// Safely set text on richTextBox1 avoiding NullReferenceException and marshaling to UI thread when needed.
+        /// </summary>
+        /// <param name="text">Text to set.</param>
+        private void SafeSetRichText(string text)
+        {
+            try
+            {
+                if (richTextBox1 == null || richTextBox1.IsDisposed) return;
+                if (richTextBox1.InvokeRequired)
+                {
+                    richTextBox1.Invoke((Action)(() => { if (richTextBox1 != null && !richTextBox1.IsDisposed) richTextBox1.Text = text; }));
+                }
+                else
+                {
+                    richTextBox1.Text = text;
+                }
+            }
+            catch
+            {
+                // Swallow any exception to avoid secondary crashes during UI update
+            }
+        }
+            //button5.Hide();
+        
         //Standard colour
         private void STD_SEL(object sender, EventArgs e)
         {
@@ -176,6 +201,7 @@ namespace C_GUI_C
         }
         private void BCButtonClicked(object sender, EventArgs e)
         {
+            Console.WriteLine(lang);
             if (PC.Checked == true) ListSel = "P";
             if (RC.Checked == true) ListSel = "R";
             if (SC.Checked == true) ListSel = "S";
@@ -411,9 +437,19 @@ namespace C_GUI_C
              * ..... and others 
              */
             XmlDocument xdc2 = new XmlDocument();
+            bool xml2Loaded = false;
             try
             {
-                xdc2.Load(listBox2.SelectedItem.ToString());
+                if (listBox2.SelectedItem != null)
+                {
+                    string path = listBox2.SelectedItem.ToString();
+                    if (!string.IsNullOrWhiteSpace(path) && File.Exists(path))
+                    {
+                        xdc2.Load(path);
+                        Console.WriteLine("XML file loaded successfully: " + path);
+                        xml2Loaded = xdc2.DocumentElement != null;
+                    }
+                }
             }
             catch (Exception ex)
             {
@@ -422,29 +458,73 @@ namespace C_GUI_C
             //Image img = Image.FromFile(listBox3.SelectedItem.ToString() + ".png");
             //Control for INFOBOX with languages.. if there is no info ("N/A" in xml file) it will use english info
             // if there is no images/3d objects the section "sh" of xml file, the value will be "0", so the app will not crash if 
-            // the selected subject is without image/3d obj.  
-            switch (lang)
-            {
-                case "it_IT":
-                    foreach (XmlNode node in xdc2.DocumentElement)
-                        if (node.Name == "IT") richTextBox1.Text = node.InnerText;
-                    if (richTextBox1.Text == "N/A")
-                        foreach (XmlNode node in xdc2.DocumentElement)
-                            if (node.Name == "EN") richTextBox1.Text = node.InnerText;
-                    break;
-                case "es_ES":
-                    foreach (XmlNode node in xdc2.DocumentElement)
-                        if (node.Name == "ES") richTextBox1.Text = node.InnerText;
-                    if (richTextBox1.Text == "N/A")
-                        foreach (XmlNode node in xdc2.DocumentElement)
-                            if (node.Name == "EN") richTextBox1.Text = node.InnerText;
-                    break;
+            // the selected subject is without image/3d obj. 
 
-                case "en_EN":
+            if (lang == "it_IT") {
+                if (xdc2.DocumentElement != null)
+                {
                     foreach (XmlNode node in xdc2.DocumentElement)
-                        if (node.Name == "EN") richTextBox1.Text = node.InnerText;
-                    break;
+                        if (node.Name == "IT") SafeSetRichText(node.InnerText);
+                }
+                else SafeSetRichText("Errore imprevisto, riavvia l'applicazione o cerca un altro tipo di munizione");
             }
+            else if (lang == "es_ES")
+                {
+                    if (xdc2.DocumentElement != null)
+                    {
+                        foreach (XmlNode node in xdc2.DocumentElement)
+                            if (node.Name == "ES") SafeSetRichText(node.InnerText);
+                    }
+                    else SafeSetRichText("Error inesperado. Por favor, reinicie la aplicación o busque otro tipo de munición.");
+            }
+            else if (lang == "en_EN") { 
+                if (xdc2.DocumentElement != null)
+                {
+                foreach (XmlNode node in xdc2.DocumentElement)
+                    if (node.Name == "EN") SafeSetRichText(node.InnerText);
+                }
+                else SafeSetRichText("Unexpected error. Please restart the application or choose a different type of ammunition.");
+            }
+            else if (lang == "de_DE")
+            {
+                if (xdc2.DocumentElement != null)
+                {
+                    foreach (XmlNode node in xdc2.DocumentElement)
+                        if (node.Name == "DE") SafeSetRichText(node.InnerText);
+                }
+                else SafeSetRichText(" Unerwarteter Fehler. Bitte starten Sie die Anwendung neu oder wählen Sie einen anderen Munitionstyp.\r\n");
+            }
+            else if (lang == "fr_FR")
+            {
+                if (xdc2.DocumentElement != null)
+                {
+                    foreach (XmlNode node in xdc2.DocumentElement)
+                        if (node.Name == "FR") SafeSetRichText(node.InnerText);
+                }
+                else SafeSetRichText("Erreur inattendue. Veuillez redémarrer l'application ou recherchez un autre type de munition.");
+            }
+            //switch (lang)
+            //{
+            //    case "it_IT":
+            //        foreach (XmlNode node in xdc2.DocumentElement)
+            //            if (node.Name == "IT") richTextBox1.Text = node.InnerText;
+            //        //if (richTextBox1.Text == "N/A")
+            //        //    foreach (XmlNode node in xdc2.DocumentElement)
+            //        //        if (node.Name == "EN") richTextBox1.Text = node.InnerText;
+            //        break;
+            //    case "es_ES":
+            //        foreach (XmlNode node in xdc2.DocumentElement)
+            //            if (node.Name == "ES") richTextBox1.Text = node.InnerText;
+            //        //if (richTextBox1.Text == "N/A")
+            //        //    foreach (XmlNode node in xdc2.DocumentElement)
+            //        //        if (node.Name == "EN") richTextBox1.Text = node.InnerText;
+            //        break;
+
+            //    case "en_EN":
+            //        foreach (XmlNode node in xdc2.DocumentElement)
+            //            if (node.Name == "EN") richTextBox1.Text = node.InnerText;
+            //        break;
+            //}
             if (listBox3.SelectedItem.ToString() != "0")
             {
                 obj = (@listBox3.SelectedItem.ToString() + ".obj");
@@ -531,6 +611,7 @@ namespace C_GUI_C
         private void ENsel()
         {
             Settings.Default.Lang = "en_EN";
+            lang = Settings.Default.Lang.ToString();
             OpenMenuBar.Text = en_EN._1;
             BC_BAR.Text = en_EN._12;
             BK_BAR.Text = en_EN._13;
@@ -557,6 +638,8 @@ namespace C_GUI_C
         }
         private void DEsel()
         {
+            Settings.Default.Lang = "de_DE";
+            lang = Settings.Default.Lang.ToString();
             OpenMenuBar.Text = de_DE._1;
             BC_BAR.Text = de_DE._12;
             BK_BAR.Text = de_DE._13;
@@ -584,6 +667,7 @@ namespace C_GUI_C
         private void ESsel()
         {
             Settings.Default.Lang = "es_ES";
+            lang = Settings.Default.Lang.ToString();
             OpenMenuBar.Text = es_ES._1;
             BC_BAR.Text = es_ES._12;
             BK_BAR.Text = es_ES._13;
@@ -611,6 +695,7 @@ namespace C_GUI_C
         private void FRsel()
         {
             Settings.Default.Lang = "fr_FR";
+            lang = Settings.Default.Lang.ToString();
             OpenMenuBar.Text = fr_FR._1;
             BC_BAR.Text = fr_FR._12;
             BK_BAR.Text = fr_FR._13;
@@ -638,6 +723,7 @@ namespace C_GUI_C
         private void ITsel()
         {
             Settings.Default.Lang = "it_IT";
+            lang = Settings.Default.Lang.ToString();
             OpenMenuBar.Text = it_IT._1;
             BC_BAR.Text = it_IT._12;
             BK_BAR.Text = it_IT._13;

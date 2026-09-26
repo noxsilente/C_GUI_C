@@ -13,7 +13,7 @@
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
     <IsWebBootstrapper>true</IsWebBootstrapper>
-    <PublishUrl>C:\Users\PC8.1\Desktop\</PublishUrl>
+    <PublishUrl>C:\Users\PC\Desktop\</PublishUrl>
     <Install>true</Install>
     <InstallFrom>Web</InstallFrom>
     <UpdateEnabled>true</UpdateEnabled>
@@ -23,7 +23,7 @@
     <UpdatePeriodically>false</UpdatePeriodically>
     <UpdateRequired>true</UpdateRequired>
     <MapFileExtensions>true</MapFileExtensions>
-    <InstallUrl>https://drive.google.com/drive/folders/1Cz-9oTjVfX9ppT1jEiEUMwfUONAaTMwd%3fusp=sharing/</InstallUrl>
+    <InstallUrl>https://drive.google.com/drive/u/1/folders/1jgXMG0qCrFDS8q9UQRJWststPefCTqQ9/</InstallUrl>
     <UpdateUrl>https://drive.google.com/drive/folders/1C4ZjhkCAojMSwPlWaVIUogzk7oTB24kJ%3fusp=sharing/</UpdateUrl>
     <ProductName>C_GUI_PROJECT</ProductName>
     <PublisherName>C GUI Project</PublisherName>
@@ -31,7 +31,7 @@
     <CreateWebPageOnPublish>true</CreateWebPageOnPublish>
     <WebPage>publish.htm</WebPage>
     <OpenBrowserOnPublish>false</OpenBrowserOnPublish>
-    <ApplicationRevision>15</ApplicationRevision>
+    <ApplicationRevision>18</ApplicationRevision>
     <ApplicationVersion>1.1.2.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <CreateDesktopShortcut>true</CreateDesktopShortcut>
@@ -1905,7 +1905,6 @@
       <Install>false</Install>
     </BootstrapperPackage>
   </ItemGroup>
-  <ItemGroup />
   <ItemGroup>
     <Content Include=".gitignore.txt" />
     <EmbeddedResource Include="logo.ico">
