@@ -173,6 +173,9 @@
       <SubType>Form</SubType>
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Compile>
+    <EmbeddedResource Include="Resources\logo.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
     <Content Include="RES\par\CRS_M\6x45mm.xml" />
     <Content Include="RES\par\PRS_I\297-230.xml" />
     <Content Include="RES\par\PRS_I\320REV.xml" />

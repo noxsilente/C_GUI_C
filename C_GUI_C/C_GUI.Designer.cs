@@ -30,11 +30,6 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(C_GUI));
-            this.PB = new System.Windows.Forms.Button();
-            this.RB = new System.Windows.Forms.Button();
-            this.BCB = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
             this.GParam = new System.Windows.Forms.GroupBox();
             this.Check_ = new System.Windows.Forms.CheckBox();
             this._11 = new System.Windows.Forms.Label();
@@ -95,66 +90,20 @@
             this.SC = new System.Windows.Forms.RadioButton();
             this.PC = new System.Windows.Forms.RadioButton();
             this.chk_state = new System.Windows.Forms.CheckBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.richTextBox1 = new System.Windows.Forms.RichTextBox();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.button5 = new System.Windows.Forms.Button();
+            this.button4 = new System.Windows.Forms.Button();
+            this.PB = new System.Windows.Forms.Button();
+            this.BCB = new System.Windows.Forms.Button();
+            this.RB = new System.Windows.Forms.Button();
             this.GParam.SuspendLayout();
             this.MenuBar.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
-            // 
-            // PB
-            // 
-            this.PB.BackColor = System.Drawing.Color.Transparent;
-            resources.ApplyResources(this.PB, "PB");
-            this.PB.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.PB.ForeColor = System.Drawing.Color.Transparent;
-            this.PB.Name = "PB";
-            this.PB.UseVisualStyleBackColor = false;
-            this.PB.Click += new System.EventHandler(this.PButtonClicked);
-            this.PB.MouseHover += new System.EventHandler(this.chkif);
-            // 
-            // RB
-            // 
-            this.RB.BackColor = System.Drawing.Color.Transparent;
-            resources.ApplyResources(this.RB, "RB");
-            this.RB.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.RB.ForeColor = System.Drawing.Color.Transparent;
-            this.RB.Name = "RB";
-            this.RB.UseVisualStyleBackColor = false;
-            this.RB.Click += new System.EventHandler(this.RButtonClicked);
-            this.RB.MouseHover += new System.EventHandler(this.chkif);
-            // 
-            // BCB
-            // 
-            this.BCB.BackColor = System.Drawing.Color.Transparent;
-            resources.ApplyResources(this.BCB, "BCB");
-            this.BCB.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.BCB.ForeColor = System.Drawing.Color.Transparent;
-            this.BCB.Name = "BCB";
-            this.BCB.UseVisualStyleBackColor = false;
-            this.BCB.Click += new System.EventHandler(this.BCButtonClicked);
-            // 
-            // button4
-            // 
-            this.button4.BackColor = System.Drawing.Color.Transparent;
-            resources.ApplyResources(this.button4, "button4");
-            this.button4.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button4.ForeColor = System.Drawing.Color.Transparent;
-            this.button4.Name = "button4";
-            this.button4.UseVisualStyleBackColor = false;
-            // 
-            // button5
-            // 
-            this.button5.BackColor = System.Drawing.Color.Transparent;
-            resources.ApplyResources(this.button5, "button5");
-            this.button5.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button5.ForeColor = System.Drawing.Color.Transparent;
-            this.button5.Name = "button5";
-            this.button5.UseVisualStyleBackColor = false;
-            this.button5.Click += new System.EventHandler(this.Tdw);
             // 
             // GParam
             // 
@@ -565,16 +514,6 @@
             this.chk_state.UseVisualStyleBackColor = true;
             this.chk_state.Click += new System.EventHandler(this.chk_state_code);
             // 
-            // pictureBox1
-            // 
-            this.pictureBox1.BackColor = System.Drawing.SystemColors.InactiveBorder;
-            this.pictureBox1.Cursor = System.Windows.Forms.Cursors.Hand;
-            resources.ApplyResources(this.pictureBox1, "pictureBox1");
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.TabStop = false;
-            this.pictureBox1.DoubleClick += new System.EventHandler(this.imgzoom);
-            this.pictureBox1.MouseHover += new System.EventHandler(this.toolimg);
-            // 
             // richTextBox1
             // 
             resources.ApplyResources(this.richTextBox1, "richTextBox1");
@@ -588,6 +527,67 @@
             resources.ApplyResources(this.panel1, "panel1");
             this.panel1.BackColor = System.Drawing.Color.Black;
             this.panel1.Name = "panel1";
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackColor = System.Drawing.SystemColors.InactiveBorder;
+            this.pictureBox1.Cursor = System.Windows.Forms.Cursors.Hand;
+            resources.ApplyResources(this.pictureBox1, "pictureBox1");
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.TabStop = false;
+            this.pictureBox1.DoubleClick += new System.EventHandler(this.imgzoom);
+            this.pictureBox1.MouseHover += new System.EventHandler(this.toolimg);
+            // 
+            // button5
+            // 
+            this.button5.BackColor = System.Drawing.Color.Transparent;
+            resources.ApplyResources(this.button5, "button5");
+            this.button5.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button5.ForeColor = System.Drawing.Color.Transparent;
+            this.button5.Name = "button5";
+            this.button5.UseVisualStyleBackColor = false;
+            this.button5.Click += new System.EventHandler(this.Tdw);
+            // 
+            // button4
+            // 
+            this.button4.BackColor = System.Drawing.Color.Transparent;
+            resources.ApplyResources(this.button4, "button4");
+            this.button4.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button4.ForeColor = System.Drawing.Color.Transparent;
+            this.button4.Name = "button4";
+            this.button4.UseVisualStyleBackColor = false;
+            // 
+            // PB
+            // 
+            this.PB.BackColor = System.Drawing.Color.Transparent;
+            resources.ApplyResources(this.PB, "PB");
+            this.PB.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.PB.ForeColor = System.Drawing.Color.Transparent;
+            this.PB.Name = "PB";
+            this.PB.UseVisualStyleBackColor = false;
+            this.PB.Click += new System.EventHandler(this.PButtonClicked);
+            this.PB.MouseHover += new System.EventHandler(this.chkif);
+            // 
+            // BCB
+            // 
+            this.BCB.BackColor = System.Drawing.Color.Transparent;
+            resources.ApplyResources(this.BCB, "BCB");
+            this.BCB.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.BCB.ForeColor = System.Drawing.Color.Transparent;
+            this.BCB.Name = "BCB";
+            this.BCB.UseVisualStyleBackColor = false;
+            this.BCB.Click += new System.EventHandler(this.BCButtonClicked);
+            // 
+            // RB
+            // 
+            this.RB.BackColor = System.Drawing.Color.Transparent;
+            resources.ApplyResources(this.RB, "RB");
+            this.RB.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.RB.ForeColor = System.Drawing.Color.Transparent;
+            this.RB.Name = "RB";
+            this.RB.UseVisualStyleBackColor = false;
+            this.RB.Click += new System.EventHandler(this.RButtonClicked);
+            this.RB.MouseHover += new System.EventHandler(this.chkif);
             // 
             // C_GUI
             // 

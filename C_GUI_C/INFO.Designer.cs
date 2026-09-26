@@ -1,4 +1,6 @@
-﻿namespace C_GUI_C
+﻿using System;
+
+namespace C_GUI_C
 {
     partial class INFO
     {
@@ -11,16 +13,52 @@
         /// Clean up any resources being used.
         /// </summary>
         /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
-       protected override void Dispose(bool disposing)
+        /// <summary>
+        /// Clean up any resources being used.
+        /// </summary>
+        /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        protected override void Dispose(bool disposing)
         {
-            if (disposing && (components != null))
+            if (disposing)
             {
-                components.Dispose();
+                // 1. Manually dispose of the ActiveX control safely
+                if (pdf1 != null)
+                {
+                    try
+                    {
+                        if (groupBox1 != null && groupBox1.Controls.Contains(pdf1))
+                        {
+                            groupBox1.Controls.Remove(pdf1);
+                        }
+                        pdf1.Dispose();
+                    }
+                    catch
+                    {
+                        // Catch potential AxAcroPDF DetachSink NullReferenceException
+                    }
+                    finally
+                    {
+                        pdf1 = null;
+                    }
+                }
+
+                // 2. Clean up designer components
+                if (components != null)
+                {
+                    components.Dispose();
+                }
             }
-            base.Dispose(disposing);
+
+            // 3. Call base Dispose
+            try
+            {
+                base.Dispose(disposing);
+            }
+            catch (NullReferenceException)
+            {
+                // Suppress remaining ActiveX detachment exceptions on window teardown
+            }
         }
-       
-        #region Windows Form Designer generated code
 
         /// <summary>
         /// Required method for Designer support - do not modify
@@ -29,27 +67,15 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(INFO));
-            this.logobox = new System.Windows.Forms.PictureBox();
             this.richTextBox1 = new System.Windows.Forms.RichTextBox();
             this.HTU = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.pdf1 = new AxAcroPDFLib.AxAcroPDF();
-            ((System.ComponentModel.ISupportInitialize)(this.logobox)).BeginInit();
+            this.logobox = new System.Windows.Forms.PictureBox();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pdf1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.logobox)).BeginInit();
             this.SuspendLayout();
-            // 
-            // logobox
-            // 
-            this.logobox.BackColor = System.Drawing.Color.Transparent;
-            this.logobox.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("logobox.BackgroundImage")));
-            this.logobox.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.logobox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.logobox.Location = new System.Drawing.Point(10, 10);
-            this.logobox.Name = "logobox";
-            this.logobox.Size = new System.Drawing.Size(100, 100);
-            this.logobox.TabIndex = 0;
-            this.logobox.TabStop = false;
             // 
             // richTextBox1
             // 
@@ -103,6 +129,20 @@
             this.pdf1.TabIndex = 4;
             this.pdf1.Visible = false;
             // 
+            // logobox
+            // 
+            this.logobox.BackColor = System.Drawing.Color.Transparent;
+            this.logobox.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("logobox.BackgroundImage")));
+            this.logobox.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.logobox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.logobox.Image = global::C_GUI_C.Properties.Resources.logo1;
+            this.logobox.Location = new System.Drawing.Point(10, 13);
+            this.logobox.Name = "logobox";
+            this.logobox.Size = new System.Drawing.Size(100, 100);
+            this.logobox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.logobox.TabIndex = 0;
+            this.logobox.TabStop = false;
+            // 
             // INFO
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -115,15 +155,13 @@
             this.Name = "INFO";
             this.ShowIcon = false;
             this.Text = "INFO";
-            ((System.ComponentModel.ISupportInitialize)(this.logobox)).EndInit();
             this.groupBox1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pdf1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.logobox)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
-
-        #endregion
 
         private System.Windows.Forms.PictureBox logobox;
         private System.Windows.Forms.RichTextBox richTextBox1;

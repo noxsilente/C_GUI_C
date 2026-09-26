@@ -19,7 +19,7 @@ namespace C_GUI_C.Properties {
     // tramite uno strumento quale ResGen o Visual Studio.
     // Per aggiungere o rimuovere un membro, modificare il file con estensione ResX ed eseguire nuovamente ResGen
     // con l'opzione /str oppure ricompilare il progetto VS.
-    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "16.0.0.0")]
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "18.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     internal class Resources {
@@ -66,6 +66,26 @@ namespace C_GUI_C.Properties {
         internal static System.Drawing.Bitmap b1 {
             get {
                 object obj = ResourceManager.GetObject("b1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Cerca una risorsa localizzata di tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap logo {
+            get {
+                object obj = ResourceManager.GetObject("logo", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Cerca una risorsa localizzata di tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap logo1 {
+            get {
+                object obj = ResourceManager.GetObject("logo1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

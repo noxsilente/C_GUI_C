@@ -547,11 +547,11 @@ namespace C_GUI_C
                 }
                 else
                 {
-                    MessageBox.Show("NO IMAGE!", "NO IMAGE!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    //MessageBox.Show("NO IMAGE!", "NO IMAGE!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     pictureBox1.Image = null;
                     button5.Hide();
                 }
-                //  button5.Visible = true;
+                button5.Visible = true;
             }
             else
             {
@@ -588,7 +588,7 @@ namespace C_GUI_C
             /* TDW.MAIN form = new TDW.MAIN();
              form.Show();
              */
-
+            
         }
         private void imgzoom(object sender, EventArgs e)
         {
