@@ -11,7 +11,7 @@ This application provides an informational catalog of ammunition, organized into
 Images included in the project are either **public domain** or created specifically for the application and marked with the project logo.
 
 This repository contains the **source code** of the project.  
-The working executable and full data files are available in the *Release* section.
+The working executable and full data files are available in <link>https://drive.google.com/file/d/1texVAIQhBufzVeRsbXhnwqvPE0OpAKZ_/view?pli=1</link>.
 
 ### **Project Note — One‑Man Project**
 C_GUI is a **one‑man project**, developed and maintained entirely by a single developer in personal free time. Updates, improvements, and fixes are released progressively as time allows.
@@ -25,7 +25,7 @@ Die Anwendung bietet einen informativen Katalog von Munition, organisiert in Kat
 Die im Projekt enthaltenen Bilder sind entweder **gemeinfrei** oder speziell für die Anwendung erstellt und mit dem Projektlogo gekennzeichnet.
 
 Dieses Repository enthält den **Quellcode** des Projekts.  
-Die ausführbare Version und alle Daten befinden sich im *Release*-Bereich.
+Die ausführbare Version und alle Daten befinden sich im <link>https://drive.google.com/file/d/1texVAIQhBufzVeRsbXhnwqvPE0OpAKZ_/view?pli=1</link>.
 
 ### **Projekt-Hinweis — Ein‑Mann‑Projekt**
 C_GUI ist ein **Ein‑Mann‑Projekt**, das vollständig von einem einzelnen Entwickler in der Freizeit erstellt und gepflegt wird. Aktualisierungen, Verbesserungen und Fehlerbehebungen erscheinen nach Möglichkeit schrittweise.
@@ -39,7 +39,7 @@ L’applicazione offre un catalogo informativo sulle munizioni, suddivise in cat
 Le immagini presenti sono **di pubblico dominio** oppure create appositamente per l’applicazione e contrassegnate con il logo del progetto.
 
 Questo repository contiene il **codice sorgente**.  
-La versione eseguibile e i file completi sono disponibili nella sezione *Release*.
+La versione eseguibile e i file completi sono disponibili in <link>https://drive.google.com/file/d/1texVAIQhBufzVeRsbXhnwqvPE0OpAKZ_/view?pli=1</link>.
 
 ### **Nota sul Progetto — Sviluppato da una sola persona**
 C_GUI è un **progetto sviluppato da una sola persona**, creato e mantenuto interamente nel tempo libero. Aggiornamenti, miglioramenti e correzioni vengono pubblicati progressivamente quando possibile.
@@ -53,7 +53,7 @@ La aplicación ofrece un catálogo informativo de municiones, organizado en cate
 Las imágenes incluidas son de **dominio público** o creadas específicamente para la aplicación y marcadas con el logotipo del proyecto.
 
 Este repositorio contiene el **código fuente**.  
-La versión ejecutable y los archivos completos están disponibles en la sección *Release*.
+La versión ejecutable y los archivos completos están disponibles en <link>https://drive.google.com/file/d/1texVAIQhBufzVeRsbXhnwqvPE0OpAKZ_/view?pli=1</link>.
 
 ### **Nota del Proyecto — Proyecto de una sola persona**
 C_GUI es un **proyecto desarrollado por una sola persona**, creado y mantenido completamente en el tiempo libre del desarrollador. Las actualizaciones, mejoras y correcciones se publican de forma progresiva cuando es posible.
@@ -67,7 +67,7 @@ L’application propose un catalogue informatif de munitions, classées en **pis
 Les images incluses sont **libres de droits** ou créées spécialement pour l’application et marquées avec le logo du projet.
 
 Ce dépôt contient le **code source**.  
-La version exécutable et les fichiers complets sont disponibles dans la section *Release*.
+La version exécutable et les fichiers complets sont disponibles dans <link>https://drive.google.com/file/d/1texVAIQhBufzVeRsbXhnwqvPE0OpAKZ_/view?pli=1</link>.
 
 ### **Note sur le Projet — Projet réalisé par une seule personne**
 C_GUI est un **projet réalisé par une seule personne**, développé et maintenu entièrement pendant le temps libre du créateur. Les mises à jour, améliorations et correctifs sont publiés progressivement lorsque cela est possible.
